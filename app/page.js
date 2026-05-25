@@ -575,7 +575,7 @@ export default function Home() {
           </p>
 
           <p style={{ fontSize: "20px" }}>
-            Greater Sudbury, Ontario, Canada
+            Ontario, Canada
           </p>
 
           <form
