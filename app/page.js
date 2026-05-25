@@ -52,7 +52,7 @@ export default function Home() {
           innovation, automation, and digital transformation.
         </p>
 
-        <a href="mailto:admin@direholahconsulting.com">
+       <a href="https://wa.me/14379980391" target="_blank">
           <button
             style={{
               marginTop: "40px",
