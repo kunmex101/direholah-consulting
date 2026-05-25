@@ -168,6 +168,57 @@ export default function Home() {
           Greater Sudbury, Ontario, Canada
         </p>
       </section>
+            <footer
+  style={{
+    background: "#071a3d",
+    color: "white",
+    textAlign: "center",
+    padding: "40px 20px",
+  }}
+>
+  <h3>Direholah Consulting</h3>
+
+  <p style={{ marginTop: "10px" }}>
+    Empowering businesses through technology and innovation.
+  </p>
+
+  <div
+    style={{
+      marginTop: "20px",
+      display: "flex",
+      justifyContent: "center",
+      gap: "20px",
+      flexWrap: "wrap",
+    }}
+  >
+    <a
+      href="https://linkedin.com"
+      target="_blank"
+      style={{ color: "white", textDecoration: "none" }}
+    >
+      LinkedIn
+    </a>
+
+    <a
+      href="https://github.com"
+      target="_blank"
+      style={{ color: "white", textDecoration: "none" }}
+    >
+      GitHub
+    </a>
+
+    <a
+      href="mailto:admin@direholahconsulting.com"
+      style={{ color: "white", textDecoration: "none" }}
+    >
+      Email
+    </a>
+  </div>
+
+  <p style={{ marginTop: "30px", fontSize: "14px", opacity: 0.7 }}>
+    © 2026 Direholah Consulting. All rights reserved.
+  </p>
+</footer>
             <a
   href="https://wa.me/14379980391"
   target="_blank"
