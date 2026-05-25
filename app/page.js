@@ -104,7 +104,10 @@ export default function Home() {
               width: "320px",
               padding: "30px",
               borderRadius: "16px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+              transition: "0.3s",
+              cursor: "pointer",
+              transform: "translateY(0px)",
             }}
           >
             <h2>{service.title}</h2>
