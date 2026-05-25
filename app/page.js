@@ -1,53 +1,168 @@
 export default function Home() {
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", background: "#f4f7fb", color: "#111" }}>
-      <nav style={{ padding: "25px 60px", display: "flex", justifyContent: "space-between", alignItems: "center", background: "white" }}>
-        <h2 style={{ color: "#0a4ea3" }}>Direholah Consulting</h2>
-        <div style={{ display: "flex", gap: "25px", fontWeight: "bold" }}>
-          <a href="#services" style={{ color: "#333", textDecoration: "none" }}>Services</a>
-          <a href="#about" style={{ color: "#333", textDecoration: "none" }}>About</a>
-          <a href="mailto:admin@direholahconsulting.com" style={{ color: "#0a4ea3", textDecoration: "none" }}>Contact</a>
+    <main style={{ fontFamily: "Arial, sans-serif", background: "#f4f6f9" }}>
+      
+      {/* NAVBAR */}
+      <nav
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "20px 60px",
+          background: "white",
+          position: "sticky",
+          top: 0,
+        }}
+      >
+        <h2 style={{ color: "#0b4ea2" }}>Direholah Consulting</h2>
+
+        <div style={{ display: "flex", gap: "30px" }}>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
 
-      <section style={{ textAlign: "center", padding: "100px 20px 70px" }}>
-        <h1 style={{ fontSize: "60px", color: "#0a4ea3", marginBottom: "20px" }}>
+      {/* HERO SECTION */}
+      <section
+        style={{
+          textAlign: "center",
+          padding: "120px 20px",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "72px",
+            color: "#0b4ea2",
+            marginBottom: "20px",
+          }}
+        >
           Direholah Consulting
         </h1>
-        <p style={{ fontSize: "22px", maxWidth: "800px", margin: "0 auto", lineHeight: "1.6" }}>
-          Empowering businesses through technology, consulting, innovation, and digital transformation.
+
+        <p
+          style={{
+            fontSize: "32px",
+            maxWidth: "1000px",
+            margin: "0 auto",
+            lineHeight: "1.6",
+          }}
+        >
+          Empowering businesses through technology, consulting,
+          innovation, automation, and digital transformation.
         </p>
-        <div style={{ marginTop: "40px" }}>
-          <a href="mailto:admin@direholahconsulting.com" style={{ background: "#0a4ea3", color: "white", padding: "16px 35px", borderRadius: "8px", textDecoration: "none", fontSize: "18px", fontWeight: "bold" }}>
+
+        <a href="mailto:admin@direholahconsulting.com">
+          <button
+            style={{
+              marginTop: "40px",
+              padding: "18px 40px",
+              fontSize: "22px",
+              background: "#0b4ea2",
+              color: "white",
+              border: "none",
+              borderRadius: "10px",
+              cursor: "pointer",
+            }}
+          >
             Contact Us
-          </a>
-        </div>
+          </button>
+        </a>
       </section>
 
-      <section id="services" style={{ maxWidth: "1100px", margin: "40px auto", padding: "0 20px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "25px" }}>
+      {/* SERVICES */}
+      <section
+        id="services"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "30px",
+          flexWrap: "wrap",
+          padding: "40px",
+        }}
+      >
         {[
-          ["IT Consulting", "Professional technology solutions for businesses, organizations, and startups."],
-          ["Business Strategy", "Helping businesses improve operations, growth, and digital transformation strategies."],
-          ["Project Management", "Organized and efficient project planning, execution, reporting, and delivery support."]
-        ].map(([title, text]) => (
-          <div key={title} style={{ background: "white", padding: "30px", borderRadius: "12px", boxShadow: "0 3px 12px rgba(0,0,0,0.1)" }}>
-            <h2>{title}</h2>
-            <p>{text}</p>
+          {
+            title: "IT Consulting",
+            text: "Technology solutions for businesses, startups, and organizations.",
+          },
+          {
+            title: "Power Platform",
+            text: "Power Apps, Power Automate, SharePoint, and Microsoft 365 solutions.",
+          },
+          {
+            title: "Project Management",
+            text: "Planning, reporting, execution, automation, and digital delivery support.",
+          },
+        ].map((service, index) => (
+          <div
+            key={index}
+            style={{
+              background: "white",
+              width: "320px",
+              padding: "30px",
+              borderRadius: "16px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+            }}
+          >
+            <h2>{service.title}</h2>
+            <p style={{ lineHeight: "1.6" }}>{service.text}</p>
           </div>
         ))}
       </section>
 
-      <section id="about" style={{ maxWidth: "900px", margin: "80px auto", padding: "40px 20px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "36px", color: "#0a4ea3", marginBottom: "20px" }}>About Direholah Consulting</h2>
-        <p style={{ fontSize: "18px", lineHeight: "1.7" }}>
-          Direholah Consulting supports individuals, businesses, churches, startups, and community organizations with practical consulting, technology, project management, and digital transformation solutions.
+      {/* ABOUT */}
+      <section
+        id="about"
+        style={{
+          textAlign: "center",
+          padding: "120px 30px",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "48px",
+            color: "#0b4ea2",
+          }}
+        >
+          About Direholah Consulting
+        </h2>
+
+        <p
+          style={{
+            maxWidth: "1000px",
+            margin: "30px auto",
+            fontSize: "24px",
+            lineHeight: "1.8",
+          }}
+        >
+          Direholah Consulting supports businesses, churches, startups,
+          and organizations with practical technology consulting,
+          automation, digital transformation, project management,
+          and innovation services.
         </p>
       </section>
 
-      <footer style={{ background: "#0a4ea3", color: "white", textAlign: "center", padding: "30px 20px" }}>
-        <p>© 2026 Direholah Consulting. All rights reserved.</p>
-        <p>admin@direholahconsulting.com</p>
-      </footer>
+      {/* CONTACT */}
+      <section
+        id="contact"
+        style={{
+          background: "#0b4ea2",
+          color: "white",
+          textAlign: "center",
+          padding: "100px 20px",
+        }}
+      >
+        <h2 style={{ fontSize: "48px" }}>Contact Us</h2>
+
+        <p style={{ fontSize: "24px", marginTop: "20px" }}>
+          admin@direholahconsulting.com
+        </p>
+
+        <p style={{ fontSize: "22px" }}>
+          Greater Sudbury, Ontario, Canada
+        </p>
+      </section>
     </main>
   );
 }
