@@ -218,27 +218,7 @@ export default function Home() {
   <p style={{ marginTop: "30px", fontSize: "14px", opacity: 0.7 }}>
     © 2026 Direholah Consulting. All rights reserved.
   </p>
-</footer>
-            <a
-  href="https://wa.me/14379980391"
-  target="_blank"
-  style={{
-    position: "fixed",
-    bottom: "25px",
-    right: "25px",
-    background: "#25D366",
-    color: "white",
-    padding: "16px 22px",
-    borderRadius: "50px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
-    zIndex: 999,
-  }}
->
-  WhatsApp
-</a>
-    <section
+       <section
   style={{
     padding: "80px 20px",
     background: "white",
@@ -270,6 +250,27 @@ export default function Home() {
     to real business needs.
   </p>
 </section>
+</footer>
+            <a
+  href="https://wa.me/14379980391"
+  target="_blank"
+  style={{
+    position: "fixed",
+    bottom: "25px",
+    right: "25px",
+    background: "#25D366",
+    color: "white",
+    padding: "16px 22px",
+    borderRadius: "50px",
+    textDecoration: "none",
+    fontWeight: "bold",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
+    zIndex: 999,
+  }}
+>
+  WhatsApp
+</a>
+   
     </main>
   );
 }
