@@ -238,6 +238,38 @@ export default function Home() {
 >
   WhatsApp
 </a>
+    <section
+  style={{
+    padding: "80px 20px",
+    background: "white",
+    textAlign: "center",
+  }}
+>
+  <h2
+    style={{
+      fontSize: "48px",
+      color: "#0b4ea2",
+      marginBottom: "20px",
+    }}
+  >
+    Why Choose Us
+  </h2>
+
+  <p
+    style={{
+      maxWidth: "800px",
+      margin: "0 auto",
+      fontSize: "20px",
+      lineHeight: "1.8",
+      color: "#444",
+    }}
+  >
+    We help businesses modernize operations through technology,
+    automation, consulting, Power Platform solutions, project
+    management, and digital transformation strategies tailored
+    to real business needs.
+  </p>
+</section>
     </main>
   );
 }
