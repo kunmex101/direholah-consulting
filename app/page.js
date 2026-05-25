@@ -16,10 +16,11 @@ export default function Home() {
           <h2 style={{ color: "#0b4ea2" }}>Direholah Consulting</h2>
         </div>
 
-        <div style={{ display: "flex", gap: "25px", fontWeight: "bold", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "22px", fontWeight: "bold", alignItems: "center" }}>
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
-          <a href="#testimonials">Reviews</a>
+          <a href="#blog">Blog</a>
+          <a href="#booking">Booking</a>
           <a href="#contact">Contact</a>
           <button onClick={() => setDarkMode(!darkMode)} style={{ cursor: "pointer", padding: "8px 12px", borderRadius: "8px", border: "1px solid #ccc" }}>
             {darkMode ? "Light" : "Dark"}
@@ -56,24 +57,43 @@ export default function Home() {
       </section>
 
       <section id="projects" style={{ background: "white", color: "#111", padding: "80px 20px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "46px", color: "#0b4ea2" }}>Projects & Solutions</h2>
-        <p style={{ maxWidth: "900px", margin: "25px auto", fontSize: "20px", lineHeight: "1.8" }}>
-          We support digital platforms, consulting projects, automation solutions, websites, dashboards, business process improvement, and community innovation projects.
-        </p>
-      </section>
-
-      <section id="testimonials" style={{ padding: "80px 20px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "46px", color: "#0b4ea2" }}>Client Reviews</h2>
+        <h2 style={{ fontSize: "46px", color: "#0b4ea2" }}>Portfolio & Case Studies</h2>
         <div style={{ display: "flex", justifyContent: "center", gap: "25px", flexWrap: "wrap", marginTop: "35px" }}>
           {[
-            "Professional, practical, and very helpful.",
-            "Clear guidance and strong technology support.",
-            "Great support for business and digital solutions.",
-          ].map((review, index) => (
-            <div key={index} style={{ background: "white", color: "#111", padding: "30px", borderRadius: "16px", width: "300px", boxShadow: "0 8px 20px rgba(0,0,0,0.1)" }}>
-              <p>“{review}”</p>
-              <strong>- Client</strong>
+            ["Business Website Development", "Professional websites for businesses and organizations."],
+            ["Power Platform Automation", "Workflow automation using Microsoft Power Apps and Power Automate."],
+            ["Community Digital Platform", "Digital solutions for churches, communities, and startups."],
+          ].map(([title, text], index) => (
+            <div key={index} style={{ background: "#f8fbff", width: "320px", padding: "30px", borderRadius: "16px", boxShadow: "0 8px 20px rgba(0,0,0,0.08)" }}>
+              <h3 style={{ color: "#0b4ea2" }}>{title}</h3>
+              <p>{text}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="booking" style={{ padding: "80px 20px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "46px", color: "#0b4ea2" }}>Book a Consultation</h2>
+        <p style={{ maxWidth: "800px", margin: "20px auto", fontSize: "20px", lineHeight: "1.7" }}>
+          Schedule a discovery call to discuss your business, technology, automation, or project needs.
+        </p>
+        <a href="https://calendly.com/" target="_blank" style={{ display: "inline-block", marginTop: "20px", padding: "16px 35px", background: "#0b4ea2", color: "white", borderRadius: "12px", textDecoration: "none", fontWeight: "bold" }}>
+          Schedule Meeting
+        </a>
+      </section>
+
+      <section id="blog" style={{ background: "white", color: "#111", padding: "80px 20px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "46px", color: "#0b4ea2" }}>Insights & Blog</h2>
+        <div style={{ display: "flex", justifyContent: "center", gap: "25px", flexWrap: "wrap", marginTop: "35px" }}>
+          {[
+            ["Why Small Businesses Need Automation", "Automation saves time, improves service delivery, and reduces manual work."],
+            ["Power Apps for Modern Teams", "Microsoft Power Platform helps organizations build custom tools quickly."],
+            ["Digital Transformation Made Simple", "Transformation starts with clear processes, people, and practical technology."],
+          ].map(([title, text], index) => (
+            <article key={index} style={{ background: "#f8fbff", width: "320px", padding: "30px", borderRadius: "16px", textAlign: "left" }}>
+              <h3 style={{ color: "#0b4ea2" }}>{title}</h3>
+              <p>{text}</p>
+            </article>
           ))}
         </div>
       </section>
