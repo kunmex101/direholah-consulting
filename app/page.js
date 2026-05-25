@@ -35,7 +35,7 @@ export default function Home() {
         <h1
           style={{
             fontSize: "72px",
-            color: "#0b4ea2",
+              color: "white",
             marginBottom: "20px",
           }}
         >
