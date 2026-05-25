@@ -3,28 +3,25 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  const bg = darkMode ? "#071a3d" : "#f4f7fb";
-  const text = darkMode ? "white" : "#111";
+  const pageBg = darkMode ? "#071a3d" : "#f4f7fb";
+  const pageText = darkMode ? "white" : "#111";
 
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", background: bg, color: text }}>
+    <main style={{ fontFamily: "Arial, sans-serif", background: pageBg, color: pageText }}>
       <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 50px", background: "white", position: "sticky", top: 0, zIndex: 1000 }}>
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <img src="/logo.png" alt="Direholah Consulting Logo" style={{ width: "55px", height: "55px", borderRadius: "12px" }} />
           <h2 style={{ color: "#0b4ea2" }}>Direholah Consulting</h2>
         </div>
 
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{ display: "none" }}>☰</button>
-
-        <div style={{ display: "flex", gap: "25px", fontWeight: "bold" }}>
+        <div style={{ display: "flex", gap: "25px", fontWeight: "bold", alignItems: "center" }}>
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
           <a href="#testimonials">Reviews</a>
           <a href="#contact">Contact</a>
-          <button onClick={() => setDarkMode(!darkMode)} style={{ cursor: "pointer" }}>
+          <button onClick={() => setDarkMode(!darkMode)} style={{ cursor: "pointer", padding: "8px 12px", borderRadius: "8px", border: "1px solid #ccc" }}>
             {darkMode ? "Light" : "Dark"}
           </button>
         </div>
@@ -50,10 +47,10 @@ export default function Home() {
           ["🚀 Business Strategy", "Helping organizations improve operations, growth, and service delivery."],
           ["🌐 Digital Transformation", "Modern digital tools, dashboards, cloud solutions, and process modernization."],
           ["🤝 Community Innovation", "Support for social impact platforms, church projects, startups, and communities."],
-        ].map(([title, text], index) => (
+        ].map(([title, description], index) => (
           <div key={index} style={{ background: "white", color: "#111", width: "320px", padding: "30px", borderRadius: "18px", boxShadow: "0 10px 25px rgba(0,0,0,0.12)" }}>
             <h2 style={{ color: "#0b4ea2" }}>{title}</h2>
-            <p style={{ lineHeight: "1.6", marginTop: "12px" }}>{text}</p>
+            <p style={{ lineHeight: "1.6", marginTop: "12px" }}>{description}</p>
           </div>
         ))}
       </section>
@@ -81,16 +78,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section style={{ padding: "80px 20px", background: "#f8fbff", textAlign: "center", color: "#111" }}>
+        <h2 style={{ fontSize: "46px", color: "#0b4ea2", marginBottom: "20px" }}>Why Choose Us</h2>
+        <p style={{ maxWidth: "850px", margin: "0 auto", fontSize: "20px", lineHeight: "1.8", color: "#444" }}>
+          We help businesses modernize operations through technology, automation, consulting, Power Platform solutions, project management, and digital transformation strategies tailored to real business needs.
+        </p>
+      </section>
+
       <section id="contact" style={{ background: "#0b4ea2", color: "white", textAlign: "center", padding: "90px 20px" }}>
         <h2 style={{ fontSize: "46px" }}>Request a Consultation</h2>
         <p style={{ fontSize: "22px" }}>admin@direholahconsulting.com</p>
         <p style={{ fontSize: "20px" }}>Greater Sudbury, Ontario, Canada</p>
 
-        <form action="https://formsubmit.co/admin@direholahconsulting.com" method="POST" style={{ maxWidth: "600px", margin: "35px auto", display: "grid", gap: "15px" }}>
-          <input type="text" name="name" placeholder="Your Name" required style={{ padding: "15px", borderRadius: "8px", border: "none" }} />
-          <input type="email" name="email" placeholder="Your Email" required style={{ padding: "15px", borderRadius: "8px", border: "none" }} />
-          <textarea name="message" placeholder="How can we help you?" required rows="5" style={{ padding: "15px", borderRadius: "8px", border: "none" }} />
-          <button type="submit" style={{ padding: "16px", background: "white", color: "#0b4ea2", border: "none", borderRadius: "10px", fontWeight: "bold", fontSize: "18px" }}>
+        <form action="https://formspree.io/f/xykvnykn" method="POST" style={{ maxWidth: "650px", margin: "35px auto 0", display: "grid", gap: "15px" }}>
+          <input type="text" name="name" placeholder="Your Name" required style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }} />
+          <input type="email" name="email" placeholder="Your Email" required style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }} />
+          <input type="text" name="company" placeholder="Company Name" style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }} />
+          <select name="service" style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }}>
+            <option>IT Consulting</option>
+            <option>Power Platform Solutions</option>
+            <option>Project Management</option>
+            <option>Automation</option>
+            <option>Website Development</option>
+            <option>Business Consulting</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your project..." required rows="6" style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }} />
+          <button type="submit" style={{ padding: "16px", background: "white", color: "#0b4ea2", border: "none", borderRadius: "10px", fontWeight: "bold", fontSize: "18px", cursor: "pointer" }}>
             Send Message
           </button>
         </form>
