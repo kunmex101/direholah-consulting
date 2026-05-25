@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", background: "#f4f6f9" }}>
+    <main style={{ fontFamily: "Arial, sans-serif", background: "linear-gradient(to bottom, #f4f6f9, #dbeafe)" }}>
       
       {/* NAVBAR */}
       <nav
@@ -25,11 +25,13 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section
-        style={{
-          textAlign: "center",
-          padding: "120px 20px",
-        }}
-      >
+  style={{
+      textAlign: "center",
+      padding: "140px 20px",
+      background: "linear-gradient(135deg, #0b4ea2, #2563eb)",
+      color: "white",
+    }}
+  >
         <h1
           style={{
             fontSize: "72px",
@@ -42,7 +44,7 @@ export default function Home() {
 
         <p
           style={{
-            fontSize: "32px",
+            fontSize: "28px",
             maxWidth: "1000px",
             margin: "0 auto",
             lineHeight: "1.6",
@@ -58,8 +60,8 @@ export default function Home() {
               marginTop: "40px",
               padding: "18px 40px",
               fontSize: "22px",
-              background: "#0b4ea2",
-              color: "white",
+              background: "white",
+              color: "#0b4ea2",
               border: "none",
               borderRadius: "10px",
               cursor: "pointer",
@@ -122,7 +124,7 @@ export default function Home() {
         <h2
           style={{
             fontSize: "48px",
-            color: "#0b4ea2",
+             color: "white",
           }}
         >
           About Direholah Consulting
