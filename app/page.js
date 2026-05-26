@@ -5,17 +5,81 @@ import Script from "next/script";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [openProduct, setOpenProduct] = useState(null);
 
   const pageBg = darkMode ? "#071a3d" : "#f4f7fb";
   const pageText = darkMode ? "white" : "#111";
 
+  const products = [
+    {
+      name: "Garri",
+      image: "/garri.jpg",
+      options: [
+        {
+          size: "2kg",
+          price: "Price to be confirmed",
+          store: "F & F Global Market",
+          address: "Sudbury, Ontario",
+          phone: "Confirm with vendor",
+          availability: "Pickup / Delivery",
+        },
+        {
+          size: "5kg",
+          price: "Price to be confirmed",
+          store: "Sudbury African Market",
+          address: "555 Barry Downe Rd, Sudbury",
+          phone: "705-918-1707",
+          availability: "Pickup / Delivery",
+        },
+      ],
+    },
+    {
+      name: "Egusi",
+      image: "/egusi.jpg",
+      options: [
+        {
+          size: "500g",
+          price: "Price to be confirmed",
+          store: "Miteo’s Afro-Caribbean Food Store",
+          address: "495 Notre Dame Ave, Sudbury",
+          phone: "705-805-0356",
+          availability: "Pickup",
+        },
+      ],
+    },
+    {
+      name: "Palm Oil",
+      image: "/palm-oil.jpg",
+      options: [
+        {
+          size: "1L",
+          price: "Price to be confirmed",
+          store: "Sudbury Tropical Market",
+          address: "893 Notre Dame Ave Unit 2, Sudbury",
+          phone: "705-504-5420",
+          availability: "Pickup / Delivery",
+        },
+      ],
+    },
+    {
+      name: "Yam Flour",
+      image: "/yam-flour.jpg",
+      options: [
+        {
+          size: "2kg",
+          price: "Price to be confirmed",
+          store: "Oyay Wholesale African Store",
+          address: "250 Frood Rd, Sudbury",
+          phone: "249-979-1062",
+          availability: "Pickup",
+        },
+      ],
+    },
+  ];
+
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-N492QPXB06"
-        strategy="afterInteractive"
-      />
-
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-N492QPXB06" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -45,13 +109,13 @@ export default function Home() {
         </nav>
 
         <section style={{ textAlign: "center", padding: "110px 20px", background: "linear-gradient(135deg, #071a3d, #0b4ea2, #2563eb)", color: "white" }}>
-          <img src="/logo.png" alt="Direholah Consulting Logo" style={{ width: "170px", borderRadius: "20px", marginBottom: "25px", boxShadow: "0 10px 30px rgba(0,0,0,0.25)" }} />
+          <img src="/logo.png" alt="Direholah Consulting Logo" style={{ width: "170px", borderRadius: "20px", marginBottom: "25px" }} />
           <h1 style={{ fontSize: "64px", marginBottom: "20px" }}>Direholah Consulting</h1>
           <h2>Strategy. Solutions. Success.</h2>
           <p style={{ fontSize: "20px", maxWidth: "900px", margin: "25px auto", lineHeight: "1.7" }}>
             Empowering businesses through technology, consulting, innovation, automation, and digital transformation.
           </p>
-          <a href="https://calendly.com/josephkunmi9" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "25px", padding: "18px 40px", background: "white", color: "#0b4ea2", borderRadius: "12px", textDecoration: "none", fontSize: "20px", fontWeight: "bold", boxShadow: "0 8px 20px rgba(0,0,0,0.2)" }}>
+          <a href="https://calendly.com/josephkunmi9" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "25px", padding: "18px 40px", background: "white", color: "#0b4ea2", borderRadius: "12px", textDecoration: "none", fontSize: "20px", fontWeight: "bold" }}>
             Schedule a Free Consultation
           </a>
         </section>
@@ -60,14 +124,11 @@ export default function Home() {
           {[
             ["💻 IT Consulting", "Technology solutions for businesses, churches, startups, and organizations."],
             ["⚙️ Power Platform", "Power Apps, Power Automate, SharePoint, Microsoft 365, and workflow automation."],
-            ["📊 Project Management", "Planning, reporting, execution, automation, and digital delivery support."],
             ["🚀 Business Strategy", "Helping organizations improve operations, growth, and service delivery."],
-            ["🌐 Digital Transformation", "Modern digital tools, dashboards, cloud solutions, and process modernization."],
-            ["🤝 Community Innovation", "Support for social impact platforms, church projects, startups, and communities."],
           ].map(([title, description], index) => (
             <div key={index} style={{ background: "white", color: "#111", width: "320px", padding: "30px", borderRadius: "18px", boxShadow: "0 10px 25px rgba(0,0,0,0.12)" }}>
               <h2 style={{ color: "#0b4ea2" }}>{title}</h2>
-              <p style={{ lineHeight: "1.6", marginTop: "12px" }}>{description}</p>
+              <p>{description}</p>
             </div>
           ))}
         </section>
@@ -78,24 +139,15 @@ export default function Home() {
               Northern Ontario African Market
             </h2>
             <p style={{ maxWidth: "900px", margin: "0 auto", fontSize: "22px", lineHeight: "1.8", color: "#444" }}>
-              African groceries, Nigerian food, Caribbean products, and delivery services across Northern Ontario.
+              Compare African grocery products by size, price, store, pickup, and delivery availability.
             </p>
-
-            <div style={{ marginTop: "35px", display: "flex", justifyContent: "center", gap: "18px", flexWrap: "wrap" }}>
-              <a href="https://wa.me/14379980391" target="_blank" rel="noopener noreferrer" style={{ background: "#25D366", color: "white", padding: "16px 28px", borderRadius: "12px", textDecoration: "none", fontWeight: "bold", fontSize: "18px" }}>
-                Order on WhatsApp
-              </a>
-              <a href="#contact" style={{ background: "#0b4ea2", color: "white", padding: "16px 28px", borderRadius: "12px", textDecoration: "none", fontWeight: "bold", fontSize: "18px" }}>
-                Become a Vendor
-              </a>
-            </div>
           </div>
 
           <h2 style={{ textAlign: "center", fontSize: "42px", color: "#0b4ea2", marginBottom: "40px" }}>
             Featured African Stores
           </h2>
 
-          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "30px" }}>
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "30px", marginBottom: "80px" }}>
             {[
               "F & F Global Market",
               "Sudbury African Market",
@@ -105,54 +157,69 @@ export default function Home() {
               "Oyay Wholesale African Store",
             ].map((store, index) => (
               <div key={index} style={{ background: "white", width: "320px", padding: "30px", borderRadius: "18px", boxShadow: "0 10px 25px rgba(0,0,0,0.1)" }}>
-                <h3 style={{ color: "#0b4ea2", fontSize: "24px" }}>{store}</h3>
-                <p style={{ marginTop: "15px", lineHeight: "1.7", color: "#333" }}>
-                  African grocery and food products available for local delivery and pickup.
-                </p>
-                <a href="https://wa.me/14379980391" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "20px", background: "#0b4ea2", color: "white", padding: "12px 20px", borderRadius: "10px", textDecoration: "none", fontWeight: "bold" }}>
-                  Order Products
-                </a>
+                <h3 style={{ color: "#0b4ea2" }}>{store}</h3>
+                <p style={{ color: "#333", lineHeight: "1.7" }}>African grocery and food products available for pickup and delivery.</p>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: "80px", textAlign: "center" }}>
-            <h2 style={{ fontSize: "42px", color: "#0b4ea2", marginBottom: "40px" }}>
-              Popular Products
-            </h2>
+          <h2 style={{ textAlign: "center", fontSize: "42px", color: "#0b4ea2", marginBottom: "40px" }}>
+            Product Price & Store Options
+          </h2>
 
-            <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "20px" }}>
-              {["Garri", "Egusi", "Palm Oil", "Yam Flour", "Plantain Chips", "Indomie", "Beans", "Crayfish", "Pepper Soup Spice", "Maggi"].map((product, index) => (
-                <div key={index} style={{ background: "white", width: "220px", padding: "25px", borderRadius: "16px", boxShadow: "0 10px 20px rgba(0,0,0,0.08)" }}>
-                  <h3 style={{ color: "#0b4ea2" }}>{product}</h3>
-                  <a href="https://wa.me/14379980391" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "20px", background: "#25D366", color: "white", padding: "10px 18px", borderRadius: "10px", textDecoration: "none", fontWeight: "bold" }}>
-                    Order
-                  </a>
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "30px" }}>
+            {products.map((product, index) => (
+              <div key={index} style={{ background: "white", width: "360px", borderRadius: "20px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.12)" }}>
+                <img src={product.image} alt={product.name} style={{ width: "100%", height: "220px", objectFit: "cover", background: "#dbeafe" }} />
+
+                <div style={{ padding: "25px" }}>
+                  <h3 style={{ color: "#0b4ea2", fontSize: "28px" }}>{product.name}</h3>
+
+                  <button
+                    onClick={() => setOpenProduct(openProduct === index ? null : index)}
+                    style={{ marginTop: "15px", background: "#0b4ea2", color: "white", padding: "12px 20px", border: "none", borderRadius: "10px", fontWeight: "bold", cursor: "pointer" }}
+                  >
+                    {openProduct === index ? "Hide Options" : "View Options"}
+                  </button>
+
+                  {openProduct === index && (
+                    <div style={{ marginTop: "25px" }}>
+                      {product.options.map((option, i) => (
+                        <div key={i} style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "15px", marginBottom: "15px", background: "#f8fbff" }}>
+                          <p><strong>Size:</strong> {option.size}</p>
+                          <p><strong>Price:</strong> {option.price}</p>
+                          <p><strong>Store:</strong> {option.store}</p>
+                          <p><strong>Address:</strong> {option.address}</p>
+                          <p><strong>Phone:</strong> {option.phone}</p>
+                          <p><strong>Available:</strong> {option.availability}</p>
+
+                          <a
+                            href={`https://wa.me/14379980391?text=Hello, I want to confirm availability for ${product.name} ${option.size} from ${option.store}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ display: "inline-block", marginTop: "10px", background: "#25D366", color: "white", padding: "10px 16px", borderRadius: "10px", textDecoration: "none", fontWeight: "bold" }}
+                          >
+                            Confirm Availability
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
           <div style={{ background: "#0b4ea2", color: "white", padding: "60px 30px", borderRadius: "24px", textAlign: "center", maxWidth: "1200px", margin: "80px auto 0" }}>
             <h2 style={{ fontSize: "42px", marginBottom: "20px" }}>Delivery Areas</h2>
             <p style={{ fontSize: "22px", lineHeight: "1.8", maxWidth: "900px", margin: "0 auto 30px" }}>
-              We support African grocery delivery and vendor partnerships across Northern Ontario.
+              Sudbury, Timmins, North Bay, Sault Ste. Marie, and nearby Northern Ontario communities.
             </p>
-            <div style={{ display: "flex", justifyContent: "center", gap: "18px", flexWrap: "wrap" }}>
-              {["Sudbury", "Timmins", "North Bay", "Sault Ste. Marie", "Elliot Lake"].map((city, index) => (
-                <div key={index} style={{ background: "white", color: "#0b4ea2", padding: "14px 22px", borderRadius: "50px", fontWeight: "bold", fontSize: "18px" }}>
-                  {city}
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
         <section id="projects" style={{ padding: "90px 20px", textAlign: "center", background: "#ffffff" }}>
           <h2 style={{ fontSize: "48px", color: "#0b4ea2", marginBottom: "20px" }}>Featured Projects</h2>
-          <p style={{ maxWidth: "850px", margin: "0 auto 50px", fontSize: "20px", lineHeight: "1.7", color: "#333" }}>
-            Real-world business and digital transformation solutions delivered for organizations and businesses.
-          </p>
 
           <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "35px" }}>
             {[
@@ -172,9 +239,9 @@ export default function Home() {
               <div key={index} style={{ background: "white", width: "420px", borderRadius: "20px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.15)", textAlign: "left" }}>
                 <img src={project.image} alt={project.title} style={{ width: "100%", height: "260px", objectFit: "cover" }} />
                 <div style={{ padding: "25px" }}>
-                  <h3 style={{ color: "#0b4ea2", fontSize: "28px", marginBottom: "15px" }}>{project.title}</h3>
-                  <p style={{ color: "#444", lineHeight: "1.7", marginBottom: "20px" }}>{project.description}</p>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "12px 24px", background: "#0b4ea2", color: "white", borderRadius: "10px", textDecoration: "none", fontWeight: "bold" }}>
+                  <h3 style={{ color: "#0b4ea2", fontSize: "28px" }}>{project.title}</h3>
+                  <p style={{ color: "#444", lineHeight: "1.7" }}>{project.description}</p>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "15px", padding: "12px 24px", background: "#0b4ea2", color: "white", borderRadius: "10px", textDecoration: "none", fontWeight: "bold" }}>
                     View Live Project
                   </a>
                 </div>
@@ -184,10 +251,7 @@ export default function Home() {
         </section>
 
         <section id="booking" style={{ textAlign: "center", padding: "100px 20px" }}>
-          <h2 style={{ fontSize: "50px", color: "#0b4ea2", marginBottom: "25px" }}>Book a Consultation</h2>
-          <p style={{ fontSize: "20px", maxWidth: "850px", margin: "0 auto 35px", lineHeight: "1.7" }}>
-            Schedule a professional consultation session with Direholah Consulting.
-          </p>
+          <h2 style={{ fontSize: "50px", color: "#0b4ea2" }}>Book a Consultation</h2>
           <a href="https://calendly.com/josephkunmi9" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "18px 40px", background: "#0b4ea2", color: "white", borderRadius: "12px", textDecoration: "none", fontSize: "20px", fontWeight: "bold" }}>
             Open Calendly Booking
           </a>
@@ -196,38 +260,24 @@ export default function Home() {
         <section id="contact" style={{ background: "#0b4ea2", color: "white", textAlign: "center", padding: "90px 20px" }}>
           <h2 style={{ fontSize: "46px" }}>Request a Consultation</h2>
           <p style={{ fontSize: "22px" }}>admin@direholahconsulting.com</p>
-          <p style={{ fontSize: "20px" }}>Ontario, Canada</p>
 
           <form action="https://formspree.io/f/xykvnykn" method="POST" style={{ maxWidth: "650px", margin: "35px auto 0", display: "grid", gap: "15px" }}>
-            <input type="text" name="name" placeholder="Your Name" required style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }} />
-            <input type="email" name="email" placeholder="Your Email" required style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }} />
-            <textarea name="message" placeholder="Tell us about your project..." required rows="6" style={{ padding: "16px", borderRadius: "10px", border: "none", fontSize: "16px" }} />
-            <button type="submit" style={{ padding: "16px", background: "white", color: "#0b4ea2", border: "none", borderRadius: "10px", fontWeight: "bold", fontSize: "18px", cursor: "pointer" }}>
+            <input type="text" name="name" placeholder="Your Name" required style={{ padding: "16px", borderRadius: "10px", border: "none" }} />
+            <input type="email" name="email" placeholder="Your Email" required style={{ padding: "16px", borderRadius: "10px", border: "none" }} />
+            <textarea name="message" placeholder="Tell us about your project..." required rows="6" style={{ padding: "16px", borderRadius: "10px", border: "none" }} />
+            <button type="submit" style={{ padding: "16px", background: "white", color: "#0b4ea2", border: "none", borderRadius: "10px", fontWeight: "bold", fontSize: "18px" }}>
               Send Message
             </button>
           </form>
         </section>
 
         <footer style={{ background: "#071a3d", color: "white", textAlign: "center", padding: "45px 20px" }}>
-          <img src="/logo.png" alt="Direholah Consulting Logo" style={{ width: "90px", borderRadius: "12px", marginBottom: "15px" }} />
           <h3>Direholah Consulting</h3>
           <p>Empowering businesses through technology and innovation.</p>
-
-          <div style={{ marginTop: "22px", display: "flex", justifyContent: "center", gap: "22px", flexWrap: "wrap" }}>
-            <a href="https://www.linkedin.com/company/direholah-consulting/" target="_blank" rel="noopener noreferrer" style={{ color: "white", fontWeight: "bold" }}>LinkedIn</a>
-            <a href="https://www.instagram.com/direholahconsulting/" target="_blank" rel="noopener noreferrer" style={{ color: "white", fontWeight: "bold" }}>Instagram</a>
-            <a href="https://www.tiktok.com/@direholahconsulting" target="_blank" rel="noopener noreferrer" style={{ color: "white", fontWeight: "bold" }}>TikTok</a>
-            <a href="https://www.youtube.com/@DireholahConsulting" target="_blank" rel="noopener noreferrer" style={{ color: "white", fontWeight: "bold" }}>YouTube</a>
-          </div>
-
           <p style={{ marginTop: "30px", fontSize: "14px", opacity: 0.7 }}>
             © 2026 Direholah Consulting. All rights reserved.
           </p>
         </footer>
-
-        <a href="https://wa.me/14379980391" target="_blank" rel="noopener noreferrer" style={{ position: "fixed", bottom: "25px", right: "25px", background: "#25D366", color: "white", padding: "16px 22px", borderRadius: "50px", textDecoration: "none", fontWeight: "bold", boxShadow: "0 8px 20px rgba(0,0,0,0.25)", zIndex: 999 }}>
-          WhatsApp
-        </a>
       </main>
     </>
   );
