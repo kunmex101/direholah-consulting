@@ -10,71 +10,92 @@ export default function Home() {
   const pageBg = darkMode ? "#071a3d" : "#f4f7fb";
   const pageText = darkMode ? "white" : "#111";
 
+  const stores = [
+    {
+      name: "F & F Global Market",
+      address: "Sudbury, ON - confirm exact address",
+      phone: "Confirm with vendor",
+      pickup: "Available",
+      delivery: "Available through Northern Ontario African Market",
+    },
+    {
+      name: "Sudbury African Market",
+      address: "555 Barry Downe Rd, Sudbury, ON",
+      phone: "705-918-1707",
+      pickup: "Available",
+      delivery: "Available through Northern Ontario African Market",
+    },
+    {
+      name: "Miteo’s Afro-Caribbean Food Store",
+      address: "495 Notre Dame Ave, Sudbury, ON",
+      phone: "705-805-0356",
+      pickup: "Available",
+      delivery: "Available through Northern Ontario African Market",
+    },
+    {
+      name: "Sudbury Tropical Market",
+      address: "893 Notre Dame Ave Unit 2, Sudbury, ON",
+      phone: "705-504-5420",
+      pickup: "Available",
+      delivery: "Available through Northern Ontario African Market",
+    },
+    {
+      name: "Naija Taste Canada",
+      address: "893 Notre Dame Ave #4, Sudbury, ON",
+      phone: "647-915-9164",
+      pickup: "Available",
+      delivery: "Available through Northern Ontario African Market",
+    },
+    {
+      name: "Oyay Wholesale African Store",
+      address: "250 Frood Rd, Sudbury, ON",
+      phone: "249-979-1062",
+      pickup: "Available",
+      delivery: "Available through Northern Ontario African Market",
+    },
+  ];
+
   const products = [
-    {
-      name: "Garri",
-      image: "/garri.jpg",
-      options: [
-        {
-          size: "2kg",
-          price: "Price to be confirmed",
-          store: "F & F Global Market",
-          address: "Sudbury, Ontario",
-          phone: "Confirm with vendor",
-          availability: "Pickup / Delivery",
-        },
-        {
-          size: "5kg",
-          price: "Price to be confirmed",
-          store: "Sudbury African Market",
-          address: "555 Barry Downe Rd, Sudbury",
-          phone: "705-918-1707",
-          availability: "Pickup / Delivery",
-        },
-      ],
-    },
-    {
-      name: "Egusi",
-      image: "/egusi.jpg",
-      options: [
-        {
-          size: "500g",
-          price: "Price to be confirmed",
-          store: "Miteo’s Afro-Caribbean Food Store",
-          address: "495 Notre Dame Ave, Sudbury",
-          phone: "705-805-0356",
-          availability: "Pickup",
-        },
-      ],
-    },
-    {
-      name: "Palm Oil",
-      image: "/palm-oil.jpg",
-      options: [
-        {
-          size: "1L",
-          price: "Price to be confirmed",
-          store: "Sudbury Tropical Market",
-          address: "893 Notre Dame Ave Unit 2, Sudbury",
-          phone: "705-504-5420",
-          availability: "Pickup / Delivery",
-        },
-      ],
-    },
-    {
-      name: "Yam Flour",
-      image: "/yam-flour.jpg",
-      options: [
-        {
-          size: "2kg",
-          price: "Price to be confirmed",
-          store: "Oyay Wholesale African Store",
-          address: "250 Frood Rd, Sudbury",
-          phone: "249-979-1062",
-          availability: "Pickup",
-        },
-      ],
-    },
+    { name: "Garri", image: "/garri.jpg", sizes: ["1kg", "2kg", "5kg", "10kg"] },
+    { name: "Ijebu Garri", image: "/ijebu-garri.jpg", sizes: ["1kg", "2kg", "5kg"] },
+    { name: "Egusi", image: "/egusi.jpg", sizes: ["500g", "1kg", "2kg"] },
+    { name: "Ogbono", image: "/ogbono.jpg", sizes: ["500g", "1kg"] },
+    { name: "Palm Oil", image: "/palm-oil.jpg", sizes: ["500ml", "1L", "4L"] },
+    { name: "Yam Flour", image: "/yam-flour.jpg", sizes: ["1kg", "2kg", "5kg"] },
+    { name: "Poundo Yam", image: "/poundo-yam.jpg", sizes: ["1kg", "2kg", "5kg"] },
+    { name: "Semovita", image: "/semovita.jpg", sizes: ["1kg", "2kg", "5kg"] },
+    { name: "Amala Flour", image: "/amala.jpg", sizes: ["1kg", "2kg"] },
+    { name: "Plantain Flour", image: "/plantain-flour.jpg", sizes: ["1kg", "2kg"] },
+    { name: "Beans", image: "/beans.jpg", sizes: ["1kg", "2kg", "5kg"] },
+    { name: "Honey Beans", image: "/honey-beans.jpg", sizes: ["1kg", "2kg", "5kg"] },
+    { name: "Rice", image: "/rice.jpg", sizes: ["2kg", "5kg", "10kg"] },
+    { name: "Ofada Rice", image: "/ofada-rice.jpg", sizes: ["1kg", "2kg", "5kg"] },
+    { name: "Indomie", image: "/indomie.jpg", sizes: ["Single Pack", "Carton"] },
+    { name: "Golden Penny Pasta", image: "/golden-penny.jpg", sizes: ["Single", "Carton"] },
+    { name: "Crayfish", image: "/crayfish.jpg", sizes: ["250g", "500g", "1kg"] },
+    { name: "Stock Fish", image: "/stockfish.jpg", sizes: ["Small", "Medium", "Large"] },
+    { name: "Dry Fish", image: "/dry-fish.jpg", sizes: ["500g", "1kg"] },
+    { name: "Smoked Turkey", image: "/smoked-turkey.jpg", sizes: ["1kg", "2kg"] },
+    { name: "Ponmo", image: "/ponmo.jpg", sizes: ["Small", "Medium", "Large"] },
+    { name: "Goat Meat", image: "/goat-meat.jpg", sizes: ["1kg", "2kg"] },
+    { name: "Chicken", image: "/chicken.jpg", sizes: ["Whole", "Cut"] },
+    { name: "Catfish", image: "/catfish.jpg", sizes: ["Small", "Medium", "Large"] },
+    { name: "Tilapia", image: "/tilapia.jpg", sizes: ["Small", "Medium", "Large"] },
+    { name: "Pepper Soup Spice", image: "/pepper-soup.jpg", sizes: ["100g", "250g"] },
+    { name: "Suya Spice", image: "/suya.jpg", sizes: ["100g", "250g"] },
+    { name: "Curry Powder", image: "/curry.jpg", sizes: ["100g", "250g"] },
+    { name: "Maggi", image: "/maggi.jpg", sizes: ["Small Pack", "Big Pack"] },
+    { name: "Knorr", image: "/knorr.jpg", sizes: ["Small Pack", "Big Pack"] },
+    { name: "Plantain Chips", image: "/plantain-chips.jpg", sizes: ["Small", "Medium", "Large"] },
+    { name: "Chin Chin", image: "/chinchin.jpg", sizes: ["Small", "Medium", "Large"] },
+    { name: "Kilishi", image: "/kilishi.jpg", sizes: ["Small", "Medium"] },
+    { name: "Maltina", image: "/maltina.jpg", sizes: ["Single", "Pack"] },
+    { name: "Supermalt", image: "/supermalt.jpg", sizes: ["Single", "Pack"] },
+    { name: "Zobo", image: "/zobo.jpg", sizes: ["Bottle", "Pack"] },
+    { name: "Black Soap", image: "/black-soap.jpg", sizes: ["Small", "Medium", "Large"] },
+    { name: "Shea Butter", image: "/shea-butter.jpg", sizes: ["250g", "500g", "1kg"] },
+    { name: "African Sponge", image: "/african-sponge.jpg", sizes: ["Single"] },
+    { name: "Hair Extensions", image: "/hair.jpg", sizes: ["Various"] },
   ];
 
   return (
@@ -115,9 +136,6 @@ export default function Home() {
           <p style={{ fontSize: "20px", maxWidth: "900px", margin: "25px auto", lineHeight: "1.7" }}>
             Empowering businesses through technology, consulting, innovation, automation, and digital transformation.
           </p>
-          <a href="https://calendly.com/josephkunmi9" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "25px", padding: "18px 40px", background: "white", color: "#0b4ea2", borderRadius: "12px", textDecoration: "none", fontSize: "20px", fontWeight: "bold" }}>
-            Schedule a Free Consultation
-          </a>
         </section>
 
         <section id="services" style={{ display: "flex", justifyContent: "center", gap: "30px", flexWrap: "wrap", padding: "80px 40px" }}>
@@ -138,68 +156,68 @@ export default function Home() {
             <h2 style={{ fontSize: "56px", color: "#0b4ea2", marginBottom: "20px" }}>
               Northern Ontario African Market
             </h2>
-            <p style={{ maxWidth: "900px", margin: "0 auto", fontSize: "22px", lineHeight: "1.8", color: "#444" }}>
-              Compare African grocery products by size, price, store, pickup, and delivery availability.
+            <p style={{ maxWidth: "950px", margin: "0 auto", fontSize: "22px", lineHeight: "1.8", color: "#444" }}>
+              Search African grocery products, compare sizes, confirm prices, see nearby stores, and choose pickup or delivery.
             </p>
           </div>
 
           <h2 style={{ textAlign: "center", fontSize: "42px", color: "#0b4ea2", marginBottom: "40px" }}>
-            Featured African Stores
+            Store Directory
           </h2>
 
-          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "30px", marginBottom: "80px" }}>
-            {[
-              "F & F Global Market",
-              "Sudbury African Market",
-              "Miteo’s Afro-Caribbean Food Store",
-              "Sudbury Tropical Market",
-              "Naija Taste Canada",
-              "Oyay Wholesale African Store",
-            ].map((store, index) => (
-              <div key={index} style={{ background: "white", width: "320px", padding: "30px", borderRadius: "18px", boxShadow: "0 10px 25px rgba(0,0,0,0.1)" }}>
-                <h3 style={{ color: "#0b4ea2" }}>{store}</h3>
-                <p style={{ color: "#333", lineHeight: "1.7" }}>African grocery and food products available for pickup and delivery.</p>
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "25px", marginBottom: "80px" }}>
+            {stores.map((store, index) => (
+              <div key={index} style={{ background: "white", width: "340px", padding: "25px", borderRadius: "18px", boxShadow: "0 10px 25px rgba(0,0,0,0.1)" }}>
+                <h3 style={{ color: "#0b4ea2" }}>{store.name}</h3>
+                <p><strong>Address:</strong> {store.address}</p>
+                <p><strong>Phone:</strong> {store.phone}</p>
+                <p><strong>Pickup:</strong> {store.pickup}</p>
+                <p><strong>Delivery:</strong> {store.delivery}</p>
               </div>
             ))}
           </div>
 
           <h2 style={{ textAlign: "center", fontSize: "42px", color: "#0b4ea2", marginBottom: "40px" }}>
-            Product Price & Store Options
+            Product Search Directory
           </h2>
 
           <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "30px" }}>
             {products.map((product, index) => (
-              <div key={index} style={{ background: "white", width: "360px", borderRadius: "20px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.12)" }}>
+              <div key={index} style={{ background: "white", width: "380px", borderRadius: "20px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.12)" }}>
                 <img src={product.image} alt={product.name} style={{ width: "100%", height: "220px", objectFit: "cover", background: "#dbeafe" }} />
 
                 <div style={{ padding: "25px" }}>
                   <h3 style={{ color: "#0b4ea2", fontSize: "28px" }}>{product.name}</h3>
+                  <p><strong>Available Sizes:</strong> {product.sizes.join(", ")}</p>
+                  <p><strong>Price:</strong> Confirm with selected store</p>
 
                   <button
                     onClick={() => setOpenProduct(openProduct === index ? null : index)}
                     style={{ marginTop: "15px", background: "#0b4ea2", color: "white", padding: "12px 20px", border: "none", borderRadius: "10px", fontWeight: "bold", cursor: "pointer" }}
                   >
-                    {openProduct === index ? "Hide Options" : "View Options"}
+                    {openProduct === index ? "Hide Stores" : "View Stores Selling This"}
                   </button>
 
                   {openProduct === index && (
                     <div style={{ marginTop: "25px" }}>
-                      {product.options.map((option, i) => (
-                        <div key={i} style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "15px", marginBottom: "15px", background: "#f8fbff" }}>
-                          <p><strong>Size:</strong> {option.size}</p>
-                          <p><strong>Price:</strong> {option.price}</p>
-                          <p><strong>Store:</strong> {option.store}</p>
-                          <p><strong>Address:</strong> {option.address}</p>
-                          <p><strong>Phone:</strong> {option.phone}</p>
-                          <p><strong>Available:</strong> {option.availability}</p>
+                      {stores.map((store, storeIndex) => (
+                        <div key={storeIndex} style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "15px", marginBottom: "15px", background: "#f8fbff" }}>
+                          <h4 style={{ color: "#0b4ea2" }}>{store.name}</h4>
+                          <p><strong>Product:</strong> {product.name}</p>
+                          <p><strong>Size Options:</strong> {product.sizes.join(", ")}</p>
+                          <p><strong>Price:</strong> Confirm with store</p>
+                          <p><strong>Address:</strong> {store.address}</p>
+                          <p><strong>Phone:</strong> {store.phone}</p>
+                          <p><strong>Pickup:</strong> {store.pickup}</p>
+                          <p><strong>Delivery:</strong> {store.delivery}</p>
 
                           <a
-                            href={`https://wa.me/14379980391?text=Hello, I want to confirm availability for ${product.name} ${option.size} from ${option.store}`}
+                            href={`https://wa.me/14379980391?text=Hello, I want to confirm ${product.name} from ${store.name}. Please confirm size, price, pickup or delivery.`}
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{ display: "inline-block", marginTop: "10px", background: "#25D366", color: "white", padding: "10px 16px", borderRadius: "10px", textDecoration: "none", fontWeight: "bold" }}
                           >
-                            Confirm Availability
+                            Confirm Through Northern Ontario African Market
                           </a>
                         </div>
                       ))}
@@ -208,13 +226,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div style={{ background: "#0b4ea2", color: "white", padding: "60px 30px", borderRadius: "24px", textAlign: "center", maxWidth: "1200px", margin: "80px auto 0" }}>
-            <h2 style={{ fontSize: "42px", marginBottom: "20px" }}>Delivery Areas</h2>
-            <p style={{ fontSize: "22px", lineHeight: "1.8", maxWidth: "900px", margin: "0 auto 30px" }}>
-              Sudbury, Timmins, North Bay, Sault Ste. Marie, and nearby Northern Ontario communities.
-            </p>
           </div>
         </section>
 
