@@ -1,1 +1,12 @@
-
+{
+  "rewrites": [
+    {
+      "source": "/clean-connect",
+      "destination": "https://sudbury-clean-connect-vg32.bolt.host/clean-connect"
+    },
+    {
+      "source": "/clean-connect/:path*",
+      "destination": "https://sudbury-clean-connect-vg32.bolt.host/clean-connect/:path*"
+    }
+  ]
+}
