@@ -120,7 +120,7 @@ export default function Home() {
           <div style={{ display: "flex", gap: "22px", fontWeight: "bold", alignItems: "center", flexWrap: "wrap" }}>
             <a href="#services">Services</a>
             <a href="#marketplace">African Market</a>
-            <a href="https://sudbury-clean-connect-vg32.bolt.host" target="_blank" rel="noopener noreferrer">Clean Connect</a>
+            <a href="https://sudbury-clean-connec-vg32.bolt.host/clean-connect", target="_blank" rel="noopener noreferrer">Clean Connect</a>
             <a href="#projects">Projects</a>
             <a href="#booking">Booking</a>
             <a href="#contact">Contact</a>
