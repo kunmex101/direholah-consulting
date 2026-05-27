@@ -120,7 +120,7 @@ export default function Home() {
           <div style={{ display: "flex", gap: "22px", fontWeight: "bold", alignItems: "center", flexWrap: "wrap" }}>
             <a href="#services">Services</a>
             <a href="#marketplace">African Market</a>
-            <a href="https://sudbury-clean-connect-vg32.bolt.host/clean-connect" target="_blank" rel="noopener noreferrer">Clean Connect</a>
+            <a href="https://sudbury-clean-connect-vg32.bolt.host" target="_blank" rel="noopener noreferrer">Clean Connect</a>
             <a href="#projects">Projects</a>
             <a href="#booking">Booking</a>
             <a href="#contact">Contact</a>
@@ -239,7 +239,7 @@ export default function Home() {
                 title: "Sudbury Clean Connect",
                 image: "/logo.png",
                 description: "Platform connecting Sudbury residents with trusted local cleaning professionals for home and office cleaning services.",
-                link: "https://sudbury-clean-connect-vg32.bolt.host/clean-connect",
+                link: "https://sudbury-clean-connect-vg32.bolt.host",
               },
               {
                 title: "F & F Global Market",
