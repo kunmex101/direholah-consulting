@@ -239,7 +239,7 @@ export default function Home() {
                 title: "Sudbury Clean Connect",
                 image: "/logo.png",
                 description: "Platform connecting Sudbury residents with trusted local cleaning professionals for home and office cleaning services.",
-                link: "https://sudbury-clean-connect-vg32.bolt.host",
+                link: "https://sudbury-clean-connec-vg32.bolt.host/clean-connect",
               },
               {
                 title: "F & F Global Market",
